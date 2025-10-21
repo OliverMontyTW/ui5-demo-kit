@@ -1,0 +1,105 @@
+{
+    "Airports": [
+        {
+            "code": "LHR",
+            "city": "London",
+            "country": "United Kingdom",
+            "label": "LHR, London, United Kingdom"
+        },
+        {
+            "code": "CDG",
+            "city": "Paris",
+            "country": "France",
+            "label": "CDG, Paris, France"
+        },
+        {
+            "code": "HND",
+            "city": "Tokyo",
+            "country": "Japan",
+            "label": "HND, Tokyo, Japan"
+        },
+        {
+            "code": "DXB",
+            "city": "Dubai",
+            "country": "United Arab Emirates",
+            "label": "DXB, Dubai, UAE"
+        },
+        {
+            "code": "MRU",
+            "city": "Port Louis",
+            "country": "Mauritius",
+            "label": "MRU, Port Louis, Mauritius"
+        }
+    ],
+    "Flights": [
+        {
+            "flightNumber": "UA123",
+            "departure": "ATL, Atlanta, USA",
+            "arrival": "LHR, London, United Kingdom",
+            "departureTime": "2025-10-14T08:30:00",
+            "arrivalTime": "2025-10-14T16:10:00",
+            "airline": "United Airlines",
+            "duration": "7h 40m",
+            "price": 699,
+            "currency": "USD"
+        },
+        {
+            "flightNumber": "DL452",
+            "departure": "JFK, New York, USA",
+            "arrival": "CDG, Paris, France",
+            "departureTime": "2025-10-15T19:10:00",
+            "arrivalTime": "2025-10-16T08:35:00",
+            "airline": "Delta Airlines",
+            "duration": "7h 25m",
+            "price": 745,
+            "currency": "USD"
+        },
+        {
+            "flightNumber": "BA204",
+            "departure": "BOS, Boston, USA",
+            "arrival": "LHR, London, United Kingdom",
+            "departureTime": "2025-10-14T21:55:00",
+            "arrivalTime": "2025-10-15T09:20:00",
+            "airline": "British Airways",
+            "duration": "6h 25m",
+            "price": 820,
+            "currency": "USD"
+        }
+    ],
+    "Bookings": [
+        {
+            "bookingId": "BKG001",
+            "fullName": "John Doe",
+            "phone": "+230 59778536",
+            "email": "john.doe@mail.com",
+            "address": "32 Palm Grove, Quatre Bornes, Mauritius",
+            "airport": "MRU, Port Louis, Mauritius",
+            "destination": "LHR, London, United Kingdom",
+            "dateRange": "Oct 14, 2025 – Oct 21, 2025",
+            "cabinClass": "Economy",
+            "airline": "British Airways",
+            "flightNumber": "BA204",
+            "duration": "12h 30m",
+            "price": 1025,
+            "currency": "USD",
+            "status": "Confirmed"
+        },
+        {
+            "bookingId": "BKG002",
+            "fullName": "Alice Smith",
+            "phone": "+230 58123456",
+            "email": "alice.smith@mail.com",
+            "address": "7 Marina Avenue, Flic en Flac, Mauritius",
+            "airport": "MRU, Port Louis, Mauritius",
+            "destination": "DXB, Dubai, UAE",
+            "dateRange": "Nov 2, 2025 – Nov 9, 2025",
+            "cabinClass": "Business",
+            "airline": "Emirates",
+            "flightNumber": "EK702",
+            "duration": "6h 15m",
+            "price": 1850,
+            "currency": "USD",
+            "status": "Pending"
+        }
+    ]
+}

@@ -70,7 +70,7 @@
         "viewType": "XML",
         "path": "ui5demokit.view",
         "async": true,
-        "viewPath": "ui5demokit.view"
+        "view": "ui5demokit.view"
       },
       "routes": [
         {

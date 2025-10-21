@@ -1,6 +1,275 @@
-<mvc:View controllerName="ui5demokit.controller.Booking"
+<mvc:View
+    controllerName="ui5demokit.controller.Booking"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="bookingPage"
+        title="Flight Booking"
+    >
+        <VBox
+            id="bookingVBox"
+            class="sapUiSmallMargin"
+        >
+            <f:SimpleForm
+                id="bookingForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="12"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+                <f:content>
+                    <core:Title
+                        id="titlePersonal"
+                        text="Personal Details"
+                    />
+
+                    <Label
+                        id="lblFullName"
+                        text="Full Name"
+                    />
+                    <Input
+                        id="inputFullName"
+                        placeholder="Enter your full name"
+                    />
+
+                    <Label
+                        id="lblPhone"
+                        text="Phone Number"
+                    />
+                    <Input
+                        id="inputPhone"
+                        placeholder="+230 5977 8536"
+                        type="Tel"
+                    />
+
+                    <Label
+                        id="lblEmail"
+                        text="Email"
+                    />
+                    <Input
+                        id="inputEmail"
+                        placeholder="john.doe@mail.com"
+                        type="Email"
+                    />
+
+                    <Label
+                        id="lblAddress"
+                        text="Address"
+                    />
+                    <Input
+                        id="inputAddress"
+                        placeholder="Enter your address"
+                    />
+
+                    <core:Title
+                        id="titleFlight"
+                        text="Flight Details"
+                    />
+
+                    <Label
+                        id="lblDestinatio"
+                        text="Destination"
+                    />
+                    <Select
+                        id="selectAirport"
+                        items="{/Airports}"
+                        selectedKey="{airport}"
+                    >
+                        <core:Item
+                            id="aiportList"
+                            key="{code}"
+                            text="{label}"
+                        />
+                    </Select>
+
+                    <Label
+                        id="lblDateRange"
+                        text="Date Range"
+                    />
+                    <DateRangeSelection
+                        id="inputDateRange"
+                        value="{dateRange}"
+                        displayFormat="MMM dd, yyyy"
+                    />
+
+                    <Label
+                        id="lblCabinClass"
+                        text="Cabin Class"
+                    />
+                    <Select
+                        id="selectCabinClass"
+                        selectedKey="{cabinClass}"
+                    >
+                        <items>
+                            <core:Item
+                                id="eco"
+                                key="Economy"
+                                text="Economy"
+                            />
+                            <core:Item
+                                id="prm"
+                                key="Premium Economy"
+                                text="Premium Economy"
+                            />
+                            <core:Item
+                                id="business"
+                                key="Business"
+                                text="Business"
+                            />
+                            <core:Item
+                                id="firstClass"
+                                key="First Class"
+                                text="First Class"
+                            />
+                        </items>
+                    </Select>
+                </f:content>
+            </f:SimpleForm>
+
+            <HBox
+                id="hbox"
+                justifyContent="End"
+                class="sapUiSmallMarginTop"
+            >
+                <Button
+                    id="btnClear"
+                    text="Clear"
+                    press=".onClearBooking"
+                    class="sapUiTinyMarginEnd"
+                />
+                <Button
+                    id="btnSubmit"
+                    text="Submit"
+                    type="Emphasized"
+                    press=".onSubmitBooking"
+                />
+            </HBox>
+        </VBox>
+        <VBox
+            id="vboxTable"
+            class="sapUiSmallMargin"
+        >
+            <Table
+                id="table"
+                items="{
+                path: '/Bookings',
+                sorter: {
+                    path: 'name' 
+                    }
+                }"
+            >
+                <columns>
+                    <Column
+                        id="name"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="nametext"
+                            text="Name"
+                        />
+                    </Column>
+                    <Column
+                        id="phoneTable"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="phoneNo"
+                            text="Phone No."
+                        />
+                    </Column>
+                    <Column
+                        id="emailColumn"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="emailtext"
+                            text="Email"
+                        />
+                    </Column>
+                    <Column
+                        id="classColumn"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="classTxt"
+                            text="Class"
+                        />
+                    </Column>
+                    <Column
+                        id="actionsColumn"
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                    >
+                        <Text
+                            id="actionsTxt"
+                            text="Actions"
+                        />
+                    </Column>
+                </columns>
+                <ColumnListItem
+                    id="listItems"
+                    vAlign="Middle"
+                >
+                    <cells>
+                        <Text
+                            id="textName"
+                            text="{fullName}"
+                        />
+                        <Text
+                            id="textPhone"
+                            text="{phone}"
+                        />
+                        <Text
+                            id="textEmail"
+                            text="{email}"
+                        />
+                        <Text
+                            id="textcabinClass"
+                            text="{cabinClass}"
+                        />
+                        <HBox id="actions">
+                            <Button
+                                id="delete"
+                                icon="sap-icon://delete"
+                                press=".deleteItem"
+                                class="sapUiTinyMarginEnd"
+                            />
+
+                            <Button
+                                id="edit"
+                                icon="sap-icon://edit"
+                                press=".editItem"
+                                class="sapUiTinyMarginEnd"
+                            />
+
+                            <Button
+                                id="details"
+                                icon="sap-icon://detail-less"
+                                press=".onOpenDetails"
+                            />
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </VBox>
     </Page>
 </mvc:View>
