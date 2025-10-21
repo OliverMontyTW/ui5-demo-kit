@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="ui5demokit.controller.Flights"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+<Page
+        id="flightsPage"
+        title="Flights"
+    >
+    <FlexBox
+        id="flexBox"
+        items="{/Flights}"
+        justifyContent="Start"
+        wrap="Wrap"
+        
+    >
+        <GenericTile
+            id="flightTile"
+            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+            header="{flightNumber}"
+            subheader="{airline}"
+            press=".onTilePress"
+            systemInfo="{departure} → {arrival}"
+            appShortcut="{duration}"
+            frameType="TwoByOne"
+        >
+            <TileContent
+                id="tileContent"
+                unit="{currency}"
+                footer="Price"
+            >
+                <NumericContent
+                    id="numericContent"
+                    value="{price}"
+                    scale=""
+                    valueColor="Good"
+                    indicator="None"
+                    withMargin="false"
+                />
+            </TileContent>
+        </GenericTile>
+    </FlexBox>
+    </Page>
+</mvc:View>

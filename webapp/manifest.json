@@ -79,12 +79,22 @@
           "target": [
             "TargetBooking"
           ]
+        },
+        {
+          "name": "Flights",
+          "pattern": "flights",
+          "target":["Flights"]
         }
       ],
       "targets": {
         "TargetBooking": {
           "id": "Booking",
           "name": "Booking"
+        },
+        "Flights": {
+          "viewType": "XML",
+          "id": "Flights",
+          "name": "Flights"
         }
       }
     },

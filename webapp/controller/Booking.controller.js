@@ -139,6 +139,11 @@ sap.ui.define([
             this.getView().byId("inputDateRange").setValue(oData.dateRange);
             this.getView().byId("selectCabinClass").setValue(oData.cabinClass);
             this.getView().byId("selectAirport").setValue(oData.airport);
+        },
+
+        handleLinkPress: function(){
+            var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("Flights");
         }
 
     });
