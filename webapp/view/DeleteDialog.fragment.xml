@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="deleteDialog"
+        title="Confirm Deletion"
+        type="Message"
+    >
+        <VBox
+            id="deleteVbox"
+            class="sapUiSmallMargin"
+        >
+            <Text
+                id="confirmDelete"
+                text="{i18n>confirmDelete}"
+            />
+        </VBox>
+
+        <beginButton>
+            <Button
+                id="btnDeleteCancel"
+                text="Cancel"
+                press=".onDialogCancelPress"
+            />
+        </beginButton>
+
+        <endButton>
+            <Button
+                id="btnDeleteConfirm"
+                text="Delete"
+                type="Emphasized"
+                press=".onDialogOkPress"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

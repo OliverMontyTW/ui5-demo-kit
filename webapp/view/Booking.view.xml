@@ -14,6 +14,18 @@
             id="bookingVBox"
             class="sapUiSmallMargin"
         >
+            <FlexBox
+                id="linkFb"
+                alignItems="Start"
+                justifyContent="End"
+                class="sapUiSmallMarginBottom"
+            >
+                <Link
+                    id="flight"
+                    text="View flights"
+                    press=".handleLinkPress"
+                />
+            </FlexBox>
             <f:SimpleForm
                 id="bookingForm"
                 editable="true"
@@ -88,7 +100,8 @@
                     <Select
                         id="selectAirport"
                         items="{/Airports}"
-                        selectedKey="{airport}"
+                        selectedKey="{/airport}"
+                        forceSelection="false"
                     >
                         <core:Item
                             id="aiportList"
@@ -103,17 +116,29 @@
                     />
                     <DateRangeSelection
                         id="inputDateRange"
-                        value="{dateRange}"
-                        displayFormat="MMM dd, yyyy"
+                        change="handleChange"
+                        value="{
+                        'type': 'sap.ui.model.type.DateInterval',
+                        'parts': [
+                            {
+                                'type': 'sap.ui.model.type.Date',
+                                'path': '/oDRS2Start'
+                            },
+                            {
+                                'type': 'sap.ui.model.type.Date',
+                                'path': '/oDRS2End'
+                            }
+                        ]
+                    }"
                     />
-
                     <Label
                         id="lblCabinClass"
                         text="Cabin Class"
                     />
                     <Select
                         id="selectCabinClass"
-                        selectedKey="{cabinClass}"
+                        selectedKey="{/cabinClass}"
+                        forceSelection="false"
                     >
                         <items>
                             <core:Item
@@ -166,6 +191,7 @@
         >
             <Table
                 id="table"
+                headerText="Bookings"
                 items="{
                 path: '/Bookings',
                 sorter: {
@@ -250,7 +276,7 @@
                             <Button
                                 id="delete"
                                 icon="sap-icon://delete"
-                                press=".deleteItem"
+                                press=".confirmDelete"
                                 class="sapUiTinyMarginEnd"
                             />
 
@@ -263,7 +289,7 @@
 
                             <Button
                                 id="details"
-                                icon="sap-icon://detail-less"
+                                icon="sap-icon://detail-more"
                                 press=".onOpenDetails"
                             />
                         </HBox>
