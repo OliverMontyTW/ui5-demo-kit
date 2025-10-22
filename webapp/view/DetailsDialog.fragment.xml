@@ -1,0 +1,96 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="DetailsDialog"
+        title="Passenger Details"
+        class="sapUiContentPadding"
+    >
+        <f:SimpleForm
+            id="passengerDetailForm"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            labelSpanL="4"
+            labelSpanM="4"
+            adjustLabelSpan="false"
+            emptySpanL="0"
+            emptySpanM="0"
+            columnsL="1"
+            columnsM="1"
+        >
+            <Label
+                id="lblName"
+                text="Name"
+            />
+            <Text
+                id="txtName"
+                text="{fullName}"
+            />
+
+            <Label
+                id="detEmail"
+                text="Email"
+            />
+            <Text
+                id="txtEmail"
+                text="{email}"
+            />
+
+            <Label
+                id="detPhone"
+                text="Phone"
+            />
+            <Text
+                id="txtPhone"
+                text="{phone}"
+            />
+
+            <Label
+                id="detAddress"
+                text="Address"
+            />
+            <Text
+                id="txtAddress"
+                text="{address}"
+            />
+
+            <Label
+                id="lblAirport"
+                text="Airport"
+            />
+            <Text
+                id="txtAirport"
+                text="{airport}"
+            />
+
+            <Label
+                id="detCabinClass"
+                text="Cabin Class"
+            />
+            <Text
+                id="txtCabinClass"
+                text="{cabinClass}"
+            />
+
+            <Label
+                id="detDateRange"
+                text="Date Range"
+            />
+            <Text
+                id="txtDateRange"
+                text="{dateRange}"
+            />
+        </f:SimpleForm>
+
+        <endButton>
+            <Button
+                id="btnCloseDialog"
+                text="Close"
+                press=".onCancelDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

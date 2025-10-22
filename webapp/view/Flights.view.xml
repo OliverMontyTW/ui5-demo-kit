@@ -15,7 +15,6 @@
         items="{/Flights}"
         justifyContent="Start"
         wrap="Wrap"
-        
     >
         <GenericTile
             id="flightTile"

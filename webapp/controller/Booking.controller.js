@@ -16,7 +16,7 @@ sap.ui.define([
             this.getView().byId("inputEmail").setValue("");
             this.getView().byId("inputAddress").setValue("");
             this.getView().byId("inputDateRange").setValue("");
-            this.getView().byId("selectCabinClass").setValue("Economy");
+            this.getView().byId("selectCabinClass").setValue("");
             this.getView().byId("selectAirport").setValue("");
         },
 
@@ -141,9 +141,26 @@ sap.ui.define([
             this.getView().byId("selectAirport").setValue(oData.airport);
         },
 
-        handleLinkPress: function(){
+        handleLinkPress: function () {
             var oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("Flights");
+        },
+
+        onOpenDetails: function (oEvent) {
+            var oItem = oEvent.getSource();
+            var oContext = oItem.getBindingContext();
+
+            if (!this._oDialog) {
+                this._oDialog = sap.ui.xmlfragment("ui5demokit.view.DetailsDialog", this);
+                this.getView().addDependent(this._oDialog);
+            }
+
+            this._oDialog.bindElement(oContext.getPath());
+            this._oDialog.open();
+        },
+
+        onCancelDialog: function () {
+            this._oDialog.close();
         }
 
     });
