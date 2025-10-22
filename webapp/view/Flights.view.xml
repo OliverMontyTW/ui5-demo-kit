@@ -20,22 +20,22 @@
         <GenericTile
             id="flightTile"
             class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-            header="{flightNumber}"
+            header="{departure} → {arrival}"
             subheader="{airline}"
             press=".onTilePress"
-            systemInfo="{departure} → {arrival}"
+            systemInfo=""
             appShortcut="{duration}"
             frameType="TwoByOne"
         >
             <TileContent
                 id="tileContent"
-                unit="{currency}"
-                footer="Price"
+                unit=""
+                footer="{flightNumber}"
             >
                 <NumericContent
                     id="numericContent"
                     value="{price}"
-                    scale=""
+                    scale="{currency}"
                     valueColor="Good"
                     indicator="None"
                     withMargin="false"
