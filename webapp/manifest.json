@@ -83,7 +83,9 @@
         {
           "name": "Flights",
           "pattern": "flights",
-          "target":["Flights"]
+          "target": [
+            "Flights"
+          ]
         }
       ],
       "targets": {
@@ -94,7 +96,8 @@
         "Flights": {
           "viewType": "XML",
           "id": "Flights",
-          "name": "Flights"
+          "name": "Flights",
+          "transition": "slide"
         }
       }
     },

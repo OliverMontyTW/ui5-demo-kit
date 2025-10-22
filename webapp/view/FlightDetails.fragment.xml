@@ -1,0 +1,114 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog
+        id="FlightDialog"
+        title="Flight Details"
+        class="sapUiContentPadding"
+    >
+        <f:SimpleForm
+            id="flightInfoForm"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            labelSpanL="4"
+            labelSpanM="4"
+            adjustLabelSpan="false"
+            emptySpanL="0"
+            emptySpanM="0"
+            columnsL="1"
+            columnsM="1"
+        >
+            <Label
+                id="lblFlightNo"
+                text="Flight Number"
+            />
+            <Text
+                id="txtFlightNo"
+                text="{flightNumber}"
+            />
+
+            <Label
+                id="lblAirline"
+                text="Airline"
+            />
+            <Text
+                id="txtAirline"
+                text="{airline}"
+            />
+
+            <Label
+                id="lblFrom"
+                text="From"
+            />
+            <Text
+                id="txtFrom"
+                text="{departure}"
+            />
+
+            <Label
+                id="lblTo"
+                text="To"
+            />
+            <Text
+                id="txtTo"
+                text="{arrival}"
+            />
+
+            <Label
+                id="lblDepartureTime"
+                text="Departure Time"
+            />
+            <Text
+                id="txtDepartureTime"
+                text="{departureTime}"
+            />
+
+            <Label
+                id="lblArrivalTime"
+                text="Arrival Time"
+            />
+            <Text
+                id="txtArrivalTime"
+                text="{arrivalTime}"
+            />
+
+            <Label
+                id="lblDuration"
+                text="Duration"
+            />
+            <Text
+                id="txtDuration"
+                text="{duration}"
+            />
+
+            <Label
+                id="lblPrice"
+                text="Price"
+            />
+            <ObjectNumber
+                id="objPrice"
+                number="{price}"
+                unit="{currency}"
+            />
+        </f:SimpleForm>
+
+        <beginButton>
+            <Button
+                id="closeBtn"
+                text="Close"
+                press=".onCloseDialog"
+            />
+        </beginButton>
+
+        <endButton>
+            <Button
+                id="bookBtn"
+                text="Book"
+                type="Emphasized"
+                press=".onBookFlight"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
