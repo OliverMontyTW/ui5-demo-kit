@@ -18,18 +18,18 @@
     >
         <GenericTile
             id="flightTile"
-            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+            class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout"
             header="{departure} → {arrival}"
             subheader="{airline}"
             press=".onTilePress"
-            systemInfo=""
-            appShortcut="{duration}"
+            systemInfo="{duration}"
+            appShortcut=""
             frameType="TwoByOne"
         >
             <TileContent
                 id="tileContent"
                 unit=""
-                footer="{flightNumber}"
+                footer="Flight No: {flightNumber}"
             >
                 <NumericContent
                     id="numericContent"

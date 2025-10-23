@@ -57,6 +57,7 @@
                     <Input
                         id="inputFullName"
                         placeholder="Enter your full name"
+                        
                     />
 
                     <Label
