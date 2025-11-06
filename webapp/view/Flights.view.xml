@@ -6,41 +6,65 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
 >
-<Page
+    <Page
         id="flightsPage"
         title="Flights"
     >
-    <FlexBox
-        id="flexBox"
-        items="{/Flights}"
-        justifyContent="Start"
-        wrap="Wrap"
-    >
-        <GenericTile
-            id="flightTile"
-            class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout"
-            header="{departure} → {arrival}"
-            subheader="{airline}"
-            press=".onTilePress"
-            systemInfo="{duration}"
-            appShortcut=""
-            frameType="TwoByOne"
-        >
-            <TileContent
-                id="tileContent"
-                unit=""
-                footer="Flight No: {flightNumber}"
-            >
-                <NumericContent
-                    id="numericContent"
-                    value="{price}"
-                    scale="{currency}"
-                    valueColor="Good"
-                    indicator="None"
-                    withMargin="false"
+        <subHeader>
+            <OverflowToolbar id="toolbar">
+                <SearchField
+                    id="searchField"
+                    liveChange=".onSearch"
+                    width="80%"
                 />
-            </TileContent>
-        </GenericTile>
-    </FlexBox>
+            </OverflowToolbar>
+        </subHeader>
+        <IllustratedMessage
+            id="msg"
+            title="Hello World"
+            illustrationType="sapIllus-SuccessHighFive"
+            enableVerticalResponsiveness="true"
+            description="This is a UI5 TypeScript Hello World app"
+        >
+            <additionalContent>
+                <Button
+                    id="helloButton"
+                    text="Say Hello"
+                    press="sayHello"
+                />
+            </additionalContent>
+        </IllustratedMessage>
+        <FlexBox
+            id="flexBox"
+            items="{/Flights}"
+            justifyContent="Start"
+            wrap="Wrap"
+        >
+            <GenericTile
+                id="flightTile"
+                class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout"
+                header="{departure} → {arrival}"
+                subheader="{airline}"
+                press=".onTilePress"
+                systemInfo="{duration}"
+                appShortcut=""
+                frameType="TwoByOne"
+            >
+                <TileContent
+                    id="tileContent"
+                    unit=""
+                    footer="Flight No: {flightNumber}"
+                >
+                    <NumericContent
+                        id="numericContent"
+                        value="{price}"
+                        scale="{currency}"
+                        valueColor="Good"
+                        indicator="None"
+                        withMargin="false"
+                    />
+                </TileContent>
+            </GenericTile>
+        </FlexBox>
     </Page>
 </mvc:View>

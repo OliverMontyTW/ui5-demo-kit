@@ -25,6 +25,7 @@
                     text="View flights"
                     press=".handleLinkPress"
                 />
+                
             </FlexBox>
             <f:SimpleForm
                 id="bookingForm"

@@ -29,6 +29,12 @@ sap.ui.define([
             var cabinClass = this.getView().byId("selectCabinClass").getSelectedKey();
             var airport = this.getView().byId("selectAirport").getSelectedKey();
 
+            if (name  == "") {
+                this.getView().byId("inputFullName").setValueState("Error");
+                MessageBox.error("This field is required");
+                return;
+            }
+
             var oModel = this.getView().getModel();
 
             if (this._editPath) {
