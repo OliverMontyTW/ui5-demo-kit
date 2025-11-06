@@ -21,9 +21,30 @@ sap.ui.define([
             this._oDialog.bindElement(oContext.getPath());
             this._oDialog.open();
         },
-        
+
         onCloseDialog: function () {
             this._oDialog.close();
+        },
+
+        onBookFlight: function (oEvent) {
+
+        },
+
+        onSearch: function (oEvent) {
+            var aFilters = [];
+            var sQuery = oEvent.getSource().getValue();
+            console.log(sQuery);
+
+            if (sQuery && sQuery.length > 0) {
+                var oFilter = new sap.ui.model.Filter("arrival", sap.ui.model.FilterOperator.Contains, sQuery);
+                aFilters.push(oFilter);
+            }
+
+            var oFlexBox = this.byId("flexBox");
+
+            var oBinding = oFlexBox.getBinding("items");
+
+            oBinding.filter(aFilters, "Application");
         }
 
     });
