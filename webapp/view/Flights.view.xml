@@ -19,21 +19,6 @@
                 />
             </OverflowToolbar>
         </subHeader>
-        <IllustratedMessage
-            id="msg"
-            title="Hello World"
-            illustrationType="sapIllus-SuccessHighFive"
-            enableVerticalResponsiveness="true"
-            description="This is a UI5 TypeScript Hello World app"
-        >
-            <additionalContent>
-                <Button
-                    id="helloButton"
-                    text="Say Hello"
-                    press="sayHello"
-                />
-            </additionalContent>
-        </IllustratedMessage>
         <FlexBox
             id="flexBox"
             items="{/Flights}"
