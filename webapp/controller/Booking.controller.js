@@ -8,7 +8,27 @@ sap.ui.define([
         onInit: function () {
             var oModel = new sap.ui.model.json.JSONModel("../model/data.json");
             this.getView().setModel(oModel);
+
+            this.getOwnerComponent()
+                .getRouter()
+                .getRoute("Booking")
+                .attachPatternMatched(this._onRouteMatched, this);
         },
+
+        _onRouteMatched: function (oEvent) {
+            var oArgs = oEvent.getParameter("arguments");
+
+            var sEncoded = oArgs.query;
+
+            if (!sEncoded) {
+                return;
+            }
+
+            var sDecodedPath = decodeURIComponent(sEncoded);
+
+            this.getView().bindElement(sDecodedPath);
+        },
+
 
         onClearBooking: function () {
             this.getView().byId("inputFullName").setValue("");
@@ -29,7 +49,7 @@ sap.ui.define([
             var cabinClass = this.getView().byId("selectCabinClass").getSelectedKey();
             var airport = this.getView().byId("selectAirport").getSelectedKey();
 
-            if (name  == "") {
+            if (name == "") {
                 this.getView().byId("inputFullName").setValueState("Error");
                 MessageBox.error("This field is required");
                 return;

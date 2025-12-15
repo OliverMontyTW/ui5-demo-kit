@@ -27,7 +27,16 @@ sap.ui.define([
         },
 
         onBookFlight: function (oEvent) {
+            var sPath = oEvent.getSource().getBindingContext().getPath();
 
+            var sEncodedPath = encodeURIComponent(sPath);
+
+            this.getOwnerComponent()
+                .getRouter()
+                .navTo("Booking", {
+                    query: sEncodedPath
+                });
+            
         },
 
         onSearch: function (oEvent) {

@@ -74,10 +74,10 @@
       },
       "routes": [
         {
-          "name": "RouteBooking",
-          "pattern": ":?query:",
+          "name": "Booking",
+          "pattern": "booking/:query:",
           "target": [
-            "TargetBooking"
+            "Booking"
           ]
         },
         {
@@ -89,7 +89,7 @@
         }
       ],
       "targets": {
-        "TargetBooking": {
+        "Booking": {
           "id": "Booking",
           "name": "Booking"
         },
