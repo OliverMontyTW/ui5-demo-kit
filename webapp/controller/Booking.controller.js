@@ -16,7 +16,7 @@ sap.ui.define([
         },
 
         _onRouteMatched: function (oEvent) {
-            var oArgs = oEvent.getParameter("arguments");
+            var oArgs = oEvent.getParameter("arguments") || {};
 
             var sEncoded = oArgs.query;
 
@@ -26,9 +26,10 @@ sap.ui.define([
 
             var sDecodedPath = decodeURIComponent(sEncoded);
 
-            this.getView().bindElement(sDecodedPath);
+            this.getView().bindElement({
+                path: sDecodedPath
+            });
         },
-
 
         onClearBooking: function () {
             this.getView().byId("inputFullName").setValue("");

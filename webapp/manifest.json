@@ -74,6 +74,11 @@
       },
       "routes": [
         {
+          "name": "default",
+          "pattern": "",
+          "target": "Booking"
+        },
+        {
           "name": "Booking",
           "pattern": "booking/:query:",
           "target": [
