@@ -42,7 +42,6 @@ sap.ui.define([
         onSearch: function (oEvent) {
             var aFilters = [];
             var sQuery = oEvent.getSource().getValue();
-            console.log(sQuery);
 
             if (sQuery && sQuery.length > 0) {
                 var oFilter = new sap.ui.model.Filter("arrival", sap.ui.model.FilterOperator.Contains, sQuery);
