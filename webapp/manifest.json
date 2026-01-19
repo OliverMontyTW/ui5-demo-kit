@@ -53,6 +53,7 @@
         }
       }
     },
+    "handleValidation": true,
     "resources": {
       "css": [
         {
@@ -70,7 +71,12 @@
         "viewType": "XML",
         "path": "ui5demokit.view",
         "async": true,
-        "view": "ui5demokit.view"
+        "view": "ui5demokit.view",
+        "bypassed": {
+          "target": [
+            "notFound"
+          ]
+        }
       },
       "routes": [
         {
@@ -103,6 +109,11 @@
           "id": "Flights",
           "name": "Flights",
           "transition": "slide"
+        },
+        "notFound": {
+          "viewId": "notFound",
+          "viewName": "NotFound",
+          "transition": "show"
         }
       }
     },

@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="ui5demokit.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>notFoundPageTitle}"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <IllustratedMessage
+            id="msg"
+            title="{i18n>notFoundPageText}"
+        />
+    </Page>
+</mvc:View>
